@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+
+	<modules>
+		<Inkatia_Ajax>
+			<version>1.0.0</version>
+		</Inkatia_Ajax>
+	</modules>
+	
+	<!-- Call Controller && Update Layout -->
+	<frontend>
+		<routers>
+		   <ajax>
+			   <use>standard</use>
+			   <args>
+				   <module>Inkatia_Ajax</module>
+				   <frontName>ajax</frontName>
+			   </args>
+		   </ajax>
+		</routers>
+		<layout>
+			  <updates>
+				  <ajax module="Inkatia_Ajax">					  
+					  <file>inkatia_ajax.xml</file>
+				  </ajax>
+			  </updates>
+		</layout>
+	</frontend>
+
+	<!-- Calls class's located at: app/code/local/< Company >/ < Module Name >/ <Model | Helper | Block> -->
+	<global>
+		<helpers>
+			<ajax>
+				<class>Inkatia_Ajax_Helper</class>
+			</ajax>
+		</helpers>
+		<blocks>
+		    <ajax>
+				<class>Inkatia_Ajax_Block</class>
+			</ajax>
+		</blocks>
+	</global>
+	
+</config>
