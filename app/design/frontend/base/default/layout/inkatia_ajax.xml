@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  
+    <default>
+
+		<!-- add css & js to module -->
+		<reference name="head">
+			<action method="addJs">
+				<script>inkatia/ajax/jquery.min.js</script>
+				<position>30</position>
+			</action>
+			<action method="addCss">
+				<stylesheet>css/inkatia/ajax/style.css</stylesheet>
+			</action> 
+		</reference>
+	
+		<!-- add block to sidebar -->
+		<reference name="right">
+			<block type="core/template" name="ajax" as="ajax" template="inkatia_ajax/index.phtml" />
+		</reference>
+
+    </default>
+</layout>

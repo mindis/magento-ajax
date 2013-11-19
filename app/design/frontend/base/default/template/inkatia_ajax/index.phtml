@@ -1,0 +1,27 @@
+<div class="inkatia_ajax">
+	<div class="inkatia_ajax_title">
+		<h2><?php echo $this->__('Inkatia Ajax'); ?></h2>
+	</div>
+	<div class="inkatia_ajax_data"></div>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		jQuery(document).ready(function() {
+			var html = '';
+			jQuery.ajax({
+				url: '<?php echo Mage::getBaseUrl(); ?>/ajax/',
+				type: 'get',
+				async: false,
+				dataType: 'json',
+				success: function( data, warning ){ 
+					html += '<h1>' + data.developer + "</h1>";
+					html += '<p>' + data.email + "</p>";
+					html += '<p>' + data.message + "</p>";
+					jQuery('.inkatia_ajax_data').html(html);
+				},
+				error: function(data, warning) {
+					console.log(data);
+				}
+			});
+		});
+	</script>
+</div>
